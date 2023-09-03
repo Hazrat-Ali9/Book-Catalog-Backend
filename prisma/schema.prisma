@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String   @id @default(uuid())
+  name       String
+  email      String
+  password   String
+  role       RoleEnum
+  contactNo  String
+  address    String
+  profileImg String
+
+  reviewsAndRatings ReviewAndRating[]
+  orders            Order[]
+
+  @@map("users")
+}
+
+model Category {
+  id    String @id @default(uuid())
+  title String
+  books Book[]
+
+  @@map("categories")
+}
+
+model Book {
+  id                String            @id @default(uuid())
+  title             String
+  author            String
+  price             Float
+  genre             String
+  publicationDate   String
+  categoryId        String
+  categories        Category          @relation(fields: [categoryId], references: [id])
+  reviewsAndRatings ReviewAndRating[]
+  orderedBooks      OrderedBook[]
+
+  @@map("books")
+}
+
+model ReviewAndRating {
+  id     String @id @default(uuid())
+  review String
+  rating Int
+  userId String
+  users  User   @relation(fields: [userId], references: [id])
+
+  bookId String
+  books  Book   @relation(fields: [bookId], references: [id])
+
+  @@map("reviews_and_ratings")
+}
+
+model Order {
+  id     String @id @default(uuid())
+  userId String
+  users  User   @relation(fields: [userId], references: [id])
+
+  status    String
+  createdAt DateTime @default(now())
+
+  orderedBooks OrderedBook[]
+
+  @@map("orders")
+}
+
+model OrderedBook {
+  id      String @id @default(uuid())
+  orderId String
+  orders  Order  @relation(fields: [orderId], references: [id])
+
+  bookId String
+  books  Book   @relation(fields: [bookId], references: [id])
+
+  quantity Int
+
+  @@map("ordered_books")
+}
+
+enum RoleEnum {
+  admin
+  customer
+}
