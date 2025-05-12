@@ -1,6 +1,6 @@
 -- CreateEnum
 CREATE TYPE "RoleEnum" AS ENUM ('admin', 'customer');
-
+-- migration sql
 -- CreateTable
 CREATE TABLE "users" (
     "id" TEXT NOT NULL,
