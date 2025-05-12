@@ -5,7 +5,7 @@ import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
 import { booksSearchableFields } from './books.constant';
 import { IBookFilterRequest } from './books.interface';
-
+// Books Service
 const insertIntoDB = async (book: Book) => {
   const result = await prisma.book.create({
     data: book,
