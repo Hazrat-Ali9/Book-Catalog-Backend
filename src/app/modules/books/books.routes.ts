@@ -4,7 +4,7 @@ import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { BookController } from './books.controller';
 import { BookValidation } from './books.validation';
-
+// Books Routes
 const router = express.Router();
 
 router.get('/', BookController.getAllFromDB);
