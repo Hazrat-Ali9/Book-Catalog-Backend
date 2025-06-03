@@ -1,5 +1,5 @@
 import { Response } from 'express';
-
+// Send Response
 type IApiReponse<T> = {
   statusCode: number;
   success: boolean;
