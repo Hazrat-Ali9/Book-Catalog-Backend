@@ -3,7 +3,7 @@ import express, { Application, NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routes from './app/routes';
-
+// apps js
 import cookieParser from 'cookie-parser';
 
 const app: Application = express();
