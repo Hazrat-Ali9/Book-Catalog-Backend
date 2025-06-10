@@ -4,7 +4,7 @@ import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { CategoryController } from './categories.controller';
 import { CategoryValidation } from './categories.validation';
-
+// Catagories Route
 const router = express.Router();
 
 router.get('/', CategoryController.getAllFromDB);
