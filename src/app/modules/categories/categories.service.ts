@@ -1,6 +1,6 @@
 import { Category } from "@prisma/client";
 import prisma from "../../../shared/prisma";
-
+// Catagories Service
 const insertIntoDB = async (category: Category) => {
   const result = await prisma.category.create({
     data: category,
