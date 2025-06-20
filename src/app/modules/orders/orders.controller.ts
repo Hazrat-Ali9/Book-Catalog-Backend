@@ -4,7 +4,7 @@ import { JwtPayload } from 'jsonwebtoken';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import { OrderService } from './orders.service';
-
+// Orders Controllers
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
   const result = await OrderService.insertIntoDB(
     req.user as JwtPayload,
