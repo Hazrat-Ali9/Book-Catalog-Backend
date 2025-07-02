@@ -3,7 +3,7 @@ import httpStatus from 'http-status';
 import catchAsync from '../../../shared/catchAsync';
 import sendResponse from '../../../shared/sendResponse';
 import { ProfileService } from './profile.service';
-
+// profile controller
 const getProfileFromDB = catchAsync(async (req: Request, res: Response) => {
   const result = await ProfileService.getProfileFromDB(
     req.user?.userId as string
