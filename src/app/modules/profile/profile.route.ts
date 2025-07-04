@@ -2,7 +2,7 @@ import express from 'express';
 import { ENUM_USER_ROLE } from '../../../enums/user';
 import auth from '../../middlewares/auth';
 import { ProfileController } from './profile.controller';
-
+//profile route
 const router = express.Router();
 router.get(
   '/',
