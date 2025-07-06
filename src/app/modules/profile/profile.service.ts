@@ -1,7 +1,7 @@
 import { User } from '@prisma/client';
 import prisma from '../../../shared/prisma';
 import { excludePassword } from '../users/users.service';
-
+// profile service
 const getProfileFromDB = async (
   id: string
 ): Promise<Omit<User, 'password'> | null> => {
