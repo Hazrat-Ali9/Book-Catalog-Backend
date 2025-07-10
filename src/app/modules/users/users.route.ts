@@ -4,7 +4,7 @@ import auth from '../../middlewares/auth';
 import validateRequest from '../../middlewares/validateRequest';
 import { UserController } from './users.controller';
 import { UserValidation } from './users.validation';
-
+// user route
 const router = express.Router();
 
 router.get('/', auth(ENUM_USER_ROLE.ADMIN), UserController.getAllFromDB);
