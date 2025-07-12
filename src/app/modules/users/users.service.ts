@@ -1,6 +1,6 @@
 import { User } from '@prisma/client';
 import prisma from '../../../shared/prisma';
-
+// user service
 export const excludePassword = {
   id: true,
   name: true,
