@@ -1,5 +1,5 @@
 import { z } from 'zod';
-
+// user validation
 const userUpdate = z.object({
   body: z.object({
     name: z.string().optional(),
