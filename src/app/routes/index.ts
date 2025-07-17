@@ -5,7 +5,7 @@ import { categoryRoutes } from '../modules/categories/categories.routes';
 import { orderRoutes } from '../modules/orders/orders.routes';
 import { userRoutes } from '../modules/users/users.route';
 import { profileRoutes } from '../modules/profile/profile.route';
-
+// index js
 const router = express.Router();
 
 const moduleRoutes = [
